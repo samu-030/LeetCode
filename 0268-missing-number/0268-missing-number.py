@@ -1,5 +1,7 @@
 class Solution(object):
     def missingNumber(self, nums):
-        for i in range(len(nums)+1):
-            if i not in nums:
-                return i
+        n = len(nums)
+        ex_sum = n * (n + 1) // 2
+        act_sum = sum(nums)
+
+        return ex_sum - act_sum
