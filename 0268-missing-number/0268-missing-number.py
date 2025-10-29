@@ -1,7 +1,10 @@
 class Solution(object):
     def missingNumber(self, nums):
         n = len(nums)
-        ex_sum = n * (n + 1) // 2
-        act_sum = sum(nums)
+        xor_all = 0
+        for i in range(n+1):
+            xor_all ^= i
+        for num in nums:
+            xor_all ^= num
 
-        return ex_sum - act_sum
+        return xor_all
