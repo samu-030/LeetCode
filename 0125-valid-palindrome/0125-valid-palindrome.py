@@ -5,9 +5,7 @@ class Solution(object):
             if i.isalnum():
                 string += i.lower()
 
-        s_rev = string[::-1]
-
-        if s_rev == string:
+        if string == string[::-1]:
             return True
 
         return False
