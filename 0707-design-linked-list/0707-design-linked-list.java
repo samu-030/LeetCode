@@ -1,12 +1,15 @@
 class MyLinkedList {
     Node head, tail;
     int size = 0;
+    
     public class Node{
         int data;
         Node next;
+        Node prev;
         Node(int value){
             data = value;
             next = null;
+            prev = null;
         }
     }
 
@@ -33,6 +36,7 @@ class MyLinkedList {
             tail = newNode;
         }else{
             newNode.next = head;
+            head.prev = newNode;
             head = newNode;
         }
         size++;
@@ -45,6 +49,7 @@ class MyLinkedList {
             tail = newNode;
         }else{
             tail.next = newNode;
+            newNode.prev = tail;
             tail = newNode;
         }
         size++;
@@ -68,7 +73,9 @@ class MyLinkedList {
             temp = temp.next;
         }
         newNode.next = temp.next;
+        temp.next.prev = newNode;
         temp.next = newNode;
+        newNode.prev = temp;
         size++;
     }
     
