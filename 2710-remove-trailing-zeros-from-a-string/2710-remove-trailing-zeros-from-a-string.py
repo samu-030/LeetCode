@@ -1,6 +1,6 @@
 class Solution(object):
     def removeTrailingZeros(self, num):
-        return num.rstrip("0")
+        return num.strip("0")
 
 
 
