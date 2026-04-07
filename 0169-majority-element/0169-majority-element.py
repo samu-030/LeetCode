@@ -1,7 +1,12 @@
 class Solution(object):
     def majorityElement(self, nums):
-
         n = len(nums)
+
+        nums.sort()
+
+        return (nums[n/2])
+
+        '''n = len(nums)
 
         ele1, ele2 = -1, -1
         cnt1, cnt2 = 0, 0
@@ -37,6 +42,8 @@ class Solution(object):
             res = ele2
 
         return res
+'''
+
 
 
 
