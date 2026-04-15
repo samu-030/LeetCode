@@ -2,6 +2,17 @@ class Solution(object):
     def maxProfit(self, prices):
 
         n = len(prices)
+        res = 0
+
+        for i in range(1, n):
+            if prices[i] > prices[i-1]:
+                res += (prices[i] - prices[i-1])
+
+        return res
+
+
+'''
+        n = len(prices)
         lmin = prices[0]
         lmax = prices[0]
         res = 0
@@ -23,4 +34,4 @@ class Solution(object):
 
         return res
 
-        
+'''        
