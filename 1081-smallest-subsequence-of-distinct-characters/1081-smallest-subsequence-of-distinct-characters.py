@@ -1,7 +1,32 @@
+from collections import Counter
+
 class Solution(object):
     def smallestSubsequence(self, s):
 
-        freq = [0] * 26
+        count = Counter(s)
+        result = []
+        seen = set()
+
+        for ch in s:
+
+            count[ch] -= 1
+
+            if ch in seen:
+                continue
+
+            while (result and ch < result[-1] and count[result[-1]] > 0):
+                removed = result.pop()
+                seen.remove(removed)
+
+            seen.add(ch)
+            result.append(ch)
+
+        return "".join(result)
+
+
+
+
+        """freq = [0] * 26
         seen = [False] * 26
 
         for ch in s:
@@ -26,4 +51,4 @@ class Solution(object):
             seen[idx] = True
 
         return "".join(result)
-        
+        """
