@@ -18,13 +18,9 @@ class Solution(object):
 
         
         rev = int(str(n)[::-1])
-        
-        start = min(n,rev)
-        end = max(n,rev)
-
         sum = 0
 
-        for i in range(start, end+1):
+        for i in range(min(n, rev), max(n, rev)+1):
             if isPrime(i) == True:
                 sum += i
 
